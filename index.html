@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+  <title>Icon gallery</title>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>  
+  <script type="text/javascript">
+
+    jQuery(document).ready(function($) {     
+ $.ajax({
+            url: "getImages.php",
+            dataType: "json",
+            success: function (data) {
+console.log(data);
+                $.each(data, function(i,filename) {
+                  $('.isotope').prepend('<div class="element"><img src="'+ filename +'" /></div>');
+                });
+            }
+        }); 
+ });
+  </script>
+</head>
+
+<body>
+  <center>
+    <h1>Icon Gallery made with masonry and handlebars</h1>
+  <div class="isotope" id="container">
+  </div>
+</center>
+</body>
+</html>
