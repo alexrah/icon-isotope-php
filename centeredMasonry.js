@@ -1,3 +1,4 @@
+jQuery(document).ready(function($) { 
 $.Isotope.prototype._getCenteredMasonryColumns = function() {
     this.width = this.element.width();
     
@@ -78,8 +79,8 @@ $.Isotope.prototype._getCenteredMasonryColumns = function() {
       itemSelector : '.element',
       masonry: {
         // columnWidth : 120
-        columnWidth : 70
-        // rowHeight: 20
+        columnWidth : 70,
+        rowHeight: 70
       },
       getSortData : {
         symbol : function( $elem ) {
@@ -174,3 +175,4 @@ $.Isotope.prototype._getCenteredMasonryColumns = function() {
     });
     
   });
+});
